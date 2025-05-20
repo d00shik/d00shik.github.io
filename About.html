@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about PRESSsure Bin - the smart, eco-friendly trash management solution">
+  <title>About PRESSsure Bin - Smart Waste Compacting Solution</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #2d3436;
+      --secondary-color: #fdcb6e;
+      --accent-color: #74B9FF;
+      --light-color: #dfe6e9;
+      --white: #ffffff;
+      --text-dark: #2d3436;
+      --text-light: #f5f6fa;
+    }
+
+    
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+      color: var(--text-dark);
+      min-height: 90vh;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    /* Header & Intro Section */
+    .intro {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .intro-text {
+      flex: 1 1 50%;
+      min-width: 300px;
+    }
+
+    .intro-text h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .intro-text p {
+      font-size: 1.1rem;
+      color: var(--white);
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--primary-color);
+      color: var(--white);
+      padding: 0.8rem 1.8rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: var(--white);
+      color: var(--primary-color);
+      transform: translateY(-2px);
+    }
+
+    .intro-image {
+      flex: 1 1 20%;
+      min-width: 20px;
+      text-align: center;
+    }
+
+    .intro-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    /* Features Section */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+
+    .feature {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 2rem 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+    }
+
+    .feature p {
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+
+    /* FAQ Section */
+   .faqs {
+  background: rgba(253, 203, 110, 0.9);
+  padding: 2.5rem;
+  border-radius: 10px;
+  margin: 3rem 0;
+}
+
+.faqs h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.faqs .subtitle {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.faq-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.faq-list {
+  flex: 1;
+  min-width: 300px;
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.faq-list ol {
+  padding-left: 1.5rem;
+}
+
+.faq-list li {
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+  line-height: 1.6;
+}
+
+.faq-list li::marker {
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+.question-box {
+  flex: 1;
+  min-width: 300px;
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.question-box h3 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.question-box textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--light-color);
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.question-box button {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 0.8rem 1.8rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.question-box button:hover {
+  background: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+  .faq-container {
+    flex-direction: column;
+  }
+  
+  .faq-list, .question-box {
+    width: 100%;
+  }
+}
+
+    /* Team Section */
+   
+    .team-section {
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+.team-subtitle {
+  max-width: 1000px; /* Adjust this value as needed */
+  margin: 0 auto 2rem auto; /* Centers the subtitle */
+  text-align: center;
+  line-height: 1.6;
+  padding: 0 1rem; /* Prevents text from touching edges on mobile */
+  color: var(--text-dark);
+  opacity: 0.9;
+  font-size: 1.1rem;
+}
+
+.team-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.member {
+  flex: 0 0 calc(33.333% - 2rem);
+  max-width: 250px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem 1rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.member:hover {
+  transform: translateY(-5px);
+}
+
+.member img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid var(--accent-color);
+}
+
+.member p {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+@media (max-width: 768px) {
+  .member {
+    flex: 0 0 calc(50% - 2rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .member {
+    flex: 0 0 100%;
+  }
+}
+
+   .team-cta {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background: rgb(55, 55, 185);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(116, 185, 255, 0.3);
+}
+
+.cta-button:hover {
+  background: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(116, 185, 255, 0.4);
+}
+
+    /* Footer */
+    .container {
+  flex: 1;
+}
+
+.footer {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 1rem;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .intro {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .intro-text {
+        padding-right: 0;
+        margin-bottom: 2rem;
+      }
+
+      .btn {
+        display: block;
+        margin: 0 auto;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .faqs {
+        padding: 1.5rem;
+      }
+    }
+
+    .logo {
+    display: flex;
+  align-items: center;  /* vertical center */
+  gap: 20px; 
+        }
+
+    .logo img {
+            width: 40px; 
+            height: 40px; 
+            vertical-align: middle;
+            border-radius: 4px;
+    }
+
+.logo-text {
+    font-size: 1.5rem;
+  font-weight: 500;
+  color: white;
+}
+
+    nav {
+  height: 80px;               /* taller navbar */
+  background-color: var(--gray);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  
+  display: flex;              /* use flexbox */
+  justify-content: center;    /* center horizontally */
+  align-items: center;        /* center vertically */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 0 40px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+    font-size: 1.2rem;
+  padding: 0 25px;
+  color: var(--blue);
+  text-decoration: none;
+  display: flex;
+  align-items: center;        /* vertically center text in links */
+  height: 100%;               /* make link height full navbar height */
+}
+
+    .navbar {
+        background: linear-gradient(to right, #0066cc, #004080);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: white;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--orange);
+    }
+
+  </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+          <img src="PRESSsureBIN.png" alt="Logo" />
+          <div class="logo-text">PRESSsure Bin</div>
+        </div>
+        <ul class="nav-links">
+          <li><a href="gpt.html">Home</a></li>
+          <li><a href="#product">Product</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#gallery">Guide</a></li>
+          <li><a href="#guides">Gallery</a></li>
+          <li><a href="About.html">About</a></li>
+        </ul>
+      </nav>
+
+  <div class="container">
+    <section class="intro" aria-labelledby="main-heading">
+      <div class="intro-text">
+        <h1 id="main-heading">About PRESSsure Bin</h1>
+        <p>
+          Meet PRESSsure Bin, your smart solution to cleaner, more efficient trash management. Designed for modern spaces, this eco-conscious bin compacts waste automatically and efficiently, reducing volume, frequency of disposal, and contamination risks.
+        </p>
+        <a href="#features" class="btn">Learn More</a>
+      </div>
+      <div class="intro-image">
+        <img src="bin.png" alt="PRESSsure Bin product image" loading="lazy">
+      </div>
+    </section>
+
+    <section id="features" class="features-section" aria-labelledby="features-heading">
+      <h2 id="features-heading" class="section-title" hidden>Key Features</h2>
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <p>Efficiently compacts waste using an automatic sensor system, reducing trash volume and optimizing bin capacity.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <i class="fas fa-robot"></i>
+          </div>
+          <p>Designed with a sleek, modern look that blends seamlessly into various environments while promoting cleanliness.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <p>Operates automatically with minimal user intervention, powered by a rechargeable battery for convenient, reliable use.
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <p>EOperates automatically with minimal user intervention, powered by a rechargeable battery for convenient, reliable use.</p>
+        </div>
+      </div>
+    </section>
+
+   <div class="faqs">
+  <h2>Frequently Asked Questions</h2>
+  <p class="subtitle">Got questions? Learn more about how PRESSsure Bin works, its battery system, safety, and maintenance!</p>
+  
+  <div class="faq-container">
+    <div class="faq-list">
+      <ol>
+        <li>Is it waterproof and weather-resistant?</li>
+        <li>Can it be charged using a standard charger?</li>
+        <li>Is the compaction system safe?</li>
+        <li>How long does the battery last?</li>
+        <li>Can the bin receive more trash while compacting?</li>
+      </ol>
+    </div>
+    
+    <div class="question-box">
+      <h3>Have another question?</h3>
+      <form>
+        <textarea placeholder="Type your question here..." rows="4"></textarea>
+        <button type="submit">Submit Question</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+   <div class="team-section">
+  <h2 class="section-title">Our Team</h2>
+  <p class="team-subtitle">We are a team of passionate and solution-driven students committed to promoting sustainability through innovation. Combining our skills in design, engineering, and research, we developed PRESSsure Bin as a smart, efficient response to modern waste management challenges.</p>
+  
+  <!-- First Row -->
+  <div class="team-row">
+    <div class="member">
+      <img src="angel.png" alt="Angel Aragawanon" loading="lazy">
+      <p>Angel Aragawanon</p>
+    </div>
+    <div class="member">
+      <img src="ace.png" alt="Christian Ace Adlawan" loading="lazy">
+      <p>Christian Ace Adlawan</p>
+    </div>
+    <div class="member">
+      <img src="Saquilabon.png" alt="Gideon Saquilabon" loading="lazy">
+      <p>Gideon Saquilabon</p>
+    </div>
+  </div>
+  
+  <!-- Second Row -->
+  <div class="team-row">
+    <div class="member">
+      <img src="dona.png" alt="Donnabelle Balatucan" loading="lazy">
+      <p>Donnabelle Balatucan</p>
+    </div>
+    <div class="member">
+      <img src="ave.png" alt="Avegil Cabornay" loading="lazy">
+      <p>Avegil Cabornay</p>
+    </div>
+    <div class="member">
+      <img src="julom.png" alt="Justin Julom" loading="lazy">
+      <p>Justin Julom</p>
+    </div>
+  </div>
+
+   <div class="team-cta">
+    <a href="#contact" class="cta-button">Contact Our Team</a>
+  </div>
+
+</div>
+    <footer class="footer">
+      <p>PRESSsure Bin &copy; 2025 | Designed by the PRESSsure Bin Team</p>
+    </footer>
+  </div>
+</body>
+</html>
